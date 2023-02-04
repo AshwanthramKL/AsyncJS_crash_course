@@ -39,13 +39,23 @@ function createPost(post){
 // .catch(err => console.log(err)); // executes reject
 
 // async / await
-async function init(){
-    // awaits createPost to finish execution before moving on to the next part
-    await createPost({'title': 'Post 3', 'body': 'This is the third post'});
-    getPosts();
+// async function init(){
+//     // awaits createPost to finish execution before moving on to the next part
+//     await createPost({'title': 'Post 3', 'body': 'This is the third post'});
+//     getPosts();
+// }
+
+// init();
+
+// async / await / fetch
+async function getUsers(){
+    const res = await fetch('https://jsonplaceholder.typicode.com/users');
+    const data = await res.json();
+
+    console.log(data);
 }
 
-init();
+getUsers();
 
 // Promise.all
 // const promise1 = Promise.resolve('Hello world');
